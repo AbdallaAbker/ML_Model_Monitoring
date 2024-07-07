@@ -1,0 +1,61 @@
+Name:             test-5b85f54954-k9ckz
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             kind-control-plane/172.18.0.2
+Start Time:       Sun, 07 Jul 2024 08:21:31 +0000
+Labels:           app=test
+                  pod-template-hash=5b85f54954
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.5
+IPs:
+  IP:           10.244.0.5
+Controlled By:  ReplicaSet/test-5b85f54954
+Containers:
+  test-pod:
+    Container ID:   
+    Image:          test:v001
+    Image ID:       
+    Port:           8000/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:        500m
+      memory:     128Mi
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-svshj (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-svshj:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Guaranteed
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  3m13s                 default-scheduler  Successfully assigned default/test-5b85f54954-k9ckz to kind-control-plane
+  Normal   Pulling    101s (x4 over 3m13s)  kubelet            Pulling image "test:v001"
+  Warning  Failed     101s (x4 over 3m12s)  kubelet            Failed to pull image "test:v001": failed to pull and unpack image "docker.io/library/test:v001": failed to resolve reference "docker.io/library/test:v001": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+  Warning  Failed     101s (x4 over 3m12s)  kubelet            Error: ErrImagePull
+  Warning  Failed     90s (x6 over 3m12s)   kubelet            Error: ImagePullBackOff
+  Normal   BackOff    77s (x7 over 3m12s)   kubelet            Back-off pulling image "test:v001"
