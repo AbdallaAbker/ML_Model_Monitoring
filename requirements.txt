@@ -11,3 +11,5 @@ numpy
 scikit-learn
 jupyter
 matplotlib
+fastapi
+pydantic

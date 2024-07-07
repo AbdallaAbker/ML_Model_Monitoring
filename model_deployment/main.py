@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 
 # Load the model
-with open("../artifacts/model/logreg_model.pkl", "rb") as f:
+with open("artifacts/model/logreg_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 app = FastAPI()
