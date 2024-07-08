@@ -4,6 +4,7 @@ it aims to verify that the integrated parts of the application work together cor
 """
 
 from fastapi.testclient import TestClient
+
 from model_deployment.main import app
 
 client = TestClient(app)
